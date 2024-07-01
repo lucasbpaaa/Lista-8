@@ -16,12 +16,11 @@ def order(ord1, ord2):
              decresc.append(ord2[j])
              j += 1
     #Agora, vamos acrescentar em decresc os elementos que restaram da lista de tamanho maior.
-    if len(ord1) >= len(ord2):
-         while i < len(ord1):
+
+    while i < len(ord1):
             decresc.append(ord1[i])
             i += 1
-    else:
-         while j < len(ord2):
+    while j < len(ord2):
             decresc.append(ord2[j])
             j += 1
     return decresc
