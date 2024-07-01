@@ -1,0 +1,25 @@
+#Question1: 
+def order(ord1, ord2):
+    decresc = []
+    i = 0
+    j = 0
+    while i  < len(ord1) and j < len(ord2):
+        if ord1[i] > ord2[j]:
+             decresc.append(ord1[i])
+             i += 1
+        elif ord1[i] == ord2[j]:
+             decresc.append(ord1[i])
+             i += 1
+             j += 1
+        else:
+             decresc.append(ord2[j])
+             j += 1
+        
+    while j < len(ord2):
+         decresc.append(ord2[j])
+         j += 1
+    return decresc
+order([4, 3, 2, 1], [6, 5, 4, 3, 2, 1])
+
+
+#Question 2:
