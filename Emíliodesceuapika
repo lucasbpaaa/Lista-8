@@ -3,6 +3,7 @@ def order(ord1, ord2):
     decresc = []
     i = 0
     j = 0
+    #Vamos comparar os elementos de ord1 com os de ord2 (ou ao contrário) e ir colocando em uma lista vazia. Esse processo será feito até que usemos todos os elementos de pelo menos uma das listas.
     while i  < len(ord1) and j < len(ord2):
         if ord1[i] > ord2[j]:
              decresc.append(ord1[i])
@@ -14,12 +15,19 @@ def order(ord1, ord2):
         else:
              decresc.append(ord2[j])
              j += 1
-        
-    while j < len(ord2):
-         decresc.append(ord2[j])
-         j += 1
+    #Agora, vamos acrescentar em decresc os elementos que restaram da lista de tamanho maior.
+    if len(ord1) >= len(ord2):
+         while i < len(ord1):
+            decresc.append(ord1[i])
+            i += 1
+    else:
+         while j < len(ord2):
+            decresc.append(ord2[j])
+            j += 1
     return decresc
-order([4, 3, 2, 1], [6, 5, 4, 3, 2, 1])
+
+         
+order([4, 3, 1, 0, -1], [9, 8, 2, 0])
 
 
 #Question 2:
