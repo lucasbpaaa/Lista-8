@@ -30,3 +30,31 @@ order([4, 3, 1, 0, -1], [9, 8, 2, 0])
 
 
 #Question 2:
+
+def clothes(N, K, lista):
+    buy = [] #Vamos colocar aqui os ítens comprados.
+    for i in range(N):
+        if lista[i] not in buy[-K:]: #Se o tipo do ítem ainda não foi comprado, basta comprar.
+            buy.append(lista[i])
+        elif lista[i] in buy[-K:]: #Se o tipo do ítem já foi comprado, não adicionamos ao carrinho.
+            continue
+    return len(buy)
+
+clothes(12, 2, [1, 2, 3, 1, 1, 2, 1, 1, 2, 3, 3, 4])
+
+#Question 3:
+
+def valid(string):
+    lista = []
+    for element in string:
+        if element == "(":
+            lista.append("(")
+        elif element == ")":
+            if len(lista) == 0:
+                return False
+            else:
+                lista.append(")")
+
+    return lista
+
+print(valid("(Comi )( o cu de quem tá lendo )()"))
