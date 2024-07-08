@@ -53,8 +53,15 @@ def valid(string):
             if len(lista) == 0:
                 return False
             else:
-                lista.append(")")
+                # Verifica se o último elemento da lista é um parêntese de abertura
+                if lista[-1] == "(":
+                    lista.pop()  # Remove o parêntese de abertura correspondente
+                else:
+                    return False
 
-    return lista
+    # A string é válida se a lista estiver vazia no final
+    return len(lista) == 0
+
+valid("(jor )( alpha)()") 
 
 print(valid("(Comi )( o cu de quem tá lendo )()"))
